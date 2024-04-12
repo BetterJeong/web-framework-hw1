@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <title>학사 정보 시스템</title>
+</head>
+<body>
+    <h2>
+        학사 정보 시스템
+    </h2>
+    <a th:href="@{/user/logout}">로그아웃</a>
+    <ul>
+        <li>
+            <div>
+                <a th:href="@{/creditsEarned}">학년별 이수 학점 조회</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <a th:href="@{/course/registration}">수강 신청하기</a>
+            </div>
+        </li>
+        <li>
+            <div>
+                <a th:href="@{/course/registration-confirmation}">수강 신청 조회</a>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>

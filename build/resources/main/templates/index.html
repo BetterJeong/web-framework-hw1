@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>학사 정보 시스템</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div>
+    <h2>
+        학사 정보 시스템
+    </h2>
+    <form th:action="@{/user/login}" method="post">
+        <div th:if="${param.error}" class="error-message">
+            <div>
+                아이디 또는 비밀번호를 확인해 주세요.
+            </div>
+        </div>
+        <div>
+            <label for="username">ID</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label for="password">PW</label>
+            <input type="password" name="password" id="password">
+        </div>
+        <button type="submit">로그인</button>
+    </form>
+</div>
+</body>
+</html>

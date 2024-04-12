@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>학년별 이수 학점 조회</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div>
+        <h3>학년별 이수 학점 조회</h3>
+        <a th:href="@{/main}">돌아가기</a>
+    </div>
+    <div>
+        <br>
+        <table>
+            <tr>
+                <th>년도</th>
+                <th>학기</th>
+                <th>취득 학점</th>
+                <th>상세 보기</th>
+            </tr>
+            <tr th:each="credit : ${credits}">
+                <td th:text="${credit.getYear()}">년도</td>
+                <td th:text="${credit.getSemester()}">학기</td>
+                <td th:text="${credit.getSum()}">취득 학점</td>
+                <td> <a th:href="@{|/creditsEarned/detail?year=${credit.getYear()}&semester=${credit.getSemester()}|}">상세 보기</a> </td>
+            </tr>
+        </table>
+        <br>
+    </div>
+    <div>
+        취득 학점 총합: [[${totalCredits}]]
+    </div>
+</body>
+</html>

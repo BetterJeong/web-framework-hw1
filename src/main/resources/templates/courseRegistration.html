@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>수강 신청하기</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <h3>수강 신청하기</h3>
+    <a th:href="@{/main}">돌아가기</a>
+
+    <div>
+        <div>
+            <br>
+            2024학년도 2학기에 수강 신청할 과목을 입력해주세요.
+        </div>
+        <form th:action="@{/course/application}" method="post">
+            <div>
+                <label for="subjectName">교과목명</label>
+                <input type="text" name="subjectName" id="subjectName">
+            </div>
+            <div>
+                <label for="subjectType">교과구분</label>
+                <input type="text" name="subjectType" id="subjectType">
+            </div>
+            <div>
+                <label for="professor">담당교수</label>
+                <input type="text" name="professor" id="professor">
+            </div>
+            <div>
+                <label for="credit">학점</label>
+                <input type="number" name="credit" id="credit">
+            </div>
+            <button type="submit">신청하기</button>
+        </form>
+    </div>
+</body>
+</html>

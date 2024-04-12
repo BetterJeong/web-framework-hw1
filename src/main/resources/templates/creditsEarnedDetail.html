@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[[${year}]]년도 [[${semester}]]학기 수강 내역</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <div>
+        <h4>[[${year}]]년도 [[${semester}]]학기 수강 내역</h4>
+        <a th:href="@{/creditsEarned}">돌아가기</a>
+    </div>
+    <div>
+        <br>
+        <table>
+            <tr>
+                <th>년도</th>
+                <th>학기</th>
+                <th>교과목명</th>
+                <th>교과구분</th>
+                <th>담당교수</th>
+                <th>학점</th>
+            </tr>
+            <tr th:each="subject : ${subjects}">
+                <td th:text="${subject.getYear()}">년도</td>
+                <td th:text="${subject.getSemester()}">학기</td>
+                <td th:text="${subject.getName()}">교과목명</td>
+                <td th:text="${subject.getType()}">교과구분</td>
+                <td th:text="${subject.getProfessor()}">담당교수</td>
+                <td th:text="${subject.getCredit()}">학점</td>
+            </tr>
+        </table>
+        <br>
+    </div>
+</body>
+</html>
